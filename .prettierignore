@@ -1,0 +1,21 @@
+.astro
+dist
+node_modules
+pnpm-lock.yaml
+test-results
+playwright-report
+.pnpm-store
+src/lib/cms/fixture.json
+contract
+# Written by the template, the guidelines installer or Renovate; not the site's code.
+.coderabbit.yaml
+.esoul
+.github
+AGENTS.md
+CLAUDE.md
+CONTEXT.md
+GLOSSARY.md
+docs
+esoul-guidelines.json
+esoul-guidelines.lock
+renovate.json5

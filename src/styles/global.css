@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+/* Design tokens live here and only here: use these utilities instead of raw hex values in templates. */
+@theme {
+    --font-sans: var(--font-source-sans), 'Source Sans 3', system-ui, sans-serif;
+
+    --color-primary: #1d4ed8;
+    --color-primary-hover: #1e40af;
+    --color-ink: #111827;
+    --color-ink-2: #4b5563;
+    --color-surface: #f3f4f6;
+    --color-line: #d1d5db;
+    --color-bg: #ffffff;
+}
+
+@layer base {
+    html {
+        @apply bg-bg font-sans text-ink antialiased;
+    }
+
+    a {
+        @apply text-primary underline-offset-2 hover:text-primary-hover hover:underline;
+    }
+}
+
+.container-site {
+    @apply mx-auto w-full max-w-5xl px-4 md:px-6;
+}

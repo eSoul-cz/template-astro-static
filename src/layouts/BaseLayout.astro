@@ -1,0 +1,65 @@
+---
+// Shared <head> (SEO, Open Graph, robots switch) and page frame. Pages pass `title`; everything else is optional.
+import { Font } from 'astro:assets';
+
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description?: string | null;
+    /** Site name for og:site_name and the title suffix. */
+    siteName?: string;
+    /** Absolute URL or site-relative path of the Open Graph image. */
+    ogImage?: string | null;
+    /** Forces `noindex,nofollow` for this page (the staging gate PUBLIC_NOINDEX forces it everywhere). */
+    noindex?: boolean;
+    /** Site-relative path of the Markdown version of this page, advertised with `<link rel="alternate" type="text/markdown">`. */
+    markdownHref?: string | null;
+}
+
+const { title, description, siteName, ogImage = '/og-default.png', noindex = false, markdownHref = null } = Astro.props;
+
+const site = Astro.site ?? new URL('http://localhost:4321');
+const stagingGate = import.meta.env.PUBLIC_NOINDEX === 'true';
+const robots = stagingGate || noindex ? 'noindex,nofollow' : 'index,follow';
+const canonical = new URL(Astro.url.pathname, site).href;
+const fullTitle = siteName && !title.includes(siteName) ? `${title} | ${siteName}` : title;
+const ogImageUrl = ogImage ? new URL(ogImage, site).href : null;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{fullTitle}</title>
+        {description && <meta name="description" content={description} />}
+        <meta name="robots" content={robots} />
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+
+        {siteName && <meta property="og:site_name" content={siteName} />}
+        <meta property="og:title" content={title} />
+        {description && <meta property="og:description" content={description} />}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+        <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:title" content={title} />
+
+        <Font cssVariable="--font-source-sans" preload={[{ weight: '200 900', style: 'normal' }]} />
+        {markdownHref && <link rel="alternate" type="text/markdown" href={new URL(markdownHref, site).href} />}
+        <slot name="head" />
+    </head>
+    <body class="flex min-h-dvh flex-col">
+        <a href="#main" class="sr-only z-50 rounded-md bg-white px-4 py-2 font-semibold focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+            Skip to content
+        </a>
+        <slot name="header" />
+        <main id="main" class="flex-1">
+            <slot />
+        </main>
+        <slot name="footer" />
+    </body>
+</html>

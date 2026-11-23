@@ -1,0 +1,12 @@
+{
+    "name": "esoul-cz/template-astro-static",
+    "description": "eSoul static website (Astro 7, Tailwind 4) without a CMS, delivered with deployStaticSite.",
+    "type": "project",
+    "license": "MIT",
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"is_dir('.esoul') || mkdir('.esoul', 0755, true); is_file('LICENSE') && rename('LICENSE', '.esoul/template-LICENSE');\"",
+            "@composer config license proprietary"
+        ]
+    }
+}

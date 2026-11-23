@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageByPath, siteName } from '../lib/site-pages';
+
+const page = pageByPath('/')!;
+---
+
+<BaseLayout title={page.title} description={page.description} siteName={siteName}>
+    <div class="container-site py-16 md:py-24">
+        <h1 class="text-4xl font-bold">It works</h1>
+        <p class="mt-4 text-ink-2">Replace this page. Layout, Tailwind, fonts, sitemap, llms.txt and the robots switch are already wired.</p>
+    </div>
+</BaseLayout>

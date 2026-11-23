@@ -1,0 +1,12 @@
+# Dependencies whose install scripts may run; any other package with one fails the install
+# (`ERR_PNPM_IGNORED_BUILDS`) until it is listed here (`pnpm approve-builds`).
+allowBuilds:
+    esbuild: true
+# Supply chain: pnpm only takes package versions that are at least one day old (value in minutes).
+# An urgent security fix can bypass it with `minimumReleaseAgeExclude: ['<package>@<version>']`.
+minimumReleaseAge: 1440
+# `pnpm audit` runs in CI and fails on any advisory. Accepting one is a deliberate act: list the GHSA id with the
+# reason and the date to re-check, for example
+#   - GHSA-xxxx-xxxx-xxxx # not reachable: dev dependency only; re-check 2027-03-01
+auditConfig:
+    ignoreGhsas: []
