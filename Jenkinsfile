@@ -1,6 +1,6 @@
 // Static site WITHOUT a CMS (archetype A-static): one call of `astroPipeline` in static mode from the eSoul Jenkins libraries
 // (`pipelines/vars/astroPipeline.txt`). It runs the checks of the Astro guideline in disposable containers (install, audit, lint,
-// format, type check, unit tests, build, `pnpm verify`, Playwright), then on the deploy branches `deployStaticSite`: an atomic release
+// format, type check, unit tests, build, `pnpm verify`, Playwright, `esoul-guidelines check`), then on the deploy branches `deployStaticSite`: an atomic release
 // into `releases/<id>` and the `current` link, checked on the live site and switched back on a mismatch (framework/astro/deployment.md,
 // "Site without a CMS"). The build that is deployed is the one that was verified and tested.
 //
@@ -22,6 +22,16 @@ astroPipeline(
         // Playwright specs against the built dist/ (desktop 1440 px and mobile 390 px). The image has to be the one whose Playwright
         // version equals `@playwright/test` in package.json (the browser builds must match): change both together.
         smoke: [enabled: true, image: 'mcr.microsoft.com/playwright:v1.65.1-noble'],
+    ],
+    // The rules rendered by `esoul-guidelines` are current and unedited (README, "Guidelines"). The image of the guidelines has no PHP
+    // project around it; its entrypoint is the command itself, and the step runs `/bin/sh -c <command>`, so the entrypoint is cleared.
+    extraChecks: [
+        [
+            name: 'Guidelines',
+            image: 'rg.fr-par.scw.cloud/testing-images/esoul-guidelines:0.3',
+            options: '--entrypoint=',
+            command: 'esoul-guidelines check',
+        ],
     ],
     deployBranches: ['main'],
     // Release root on the server (current/, releases/, shared/) and the SSH host.
