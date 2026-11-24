@@ -73,6 +73,7 @@ The `Jenkinsfile` has a **`Checks` stage that is mandatory** and runs before any
 - Wait for islands to hydrate before interacting with them.
 - A test that changes content never runs against a deployed environment (`E2E_BASE_URL` pointing at it).
 - Admin end-to-end tests (archetype `B-admin`) log in once in a setup project and never log out the shared session.
+- The Astro dev toolbar can cover mobile tap targets; disable it in the Playwright runs (`devToolbar.enabled: false`) so a click on the `mobile` project hits the page.
 
 > Local additions go below this managed block. Content outside the block is preserved when the guidelines are synced.
 <!-- esoul-guidelines:end tools -->
