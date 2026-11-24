@@ -5,6 +5,13 @@ There is no CMS and no server code: forms post to a backend that is its own repo
 the `laravel-cms` template, or a shared form service). This file is about running and operating the site; the engineering
 rules are in `docs/project_guidelines/`.
 
+## Getting started
+
+1. Clone: `git clone git@github.com:eSoul-cz/<repository>.git`.
+2. Agent skills: `npx skills experimental_install` restores the set pinned in `skills-lock.json`. Optional personal layers (installed once per user, not part of the project): `npx @esoul-cz/skills install project helpers`; `npx @esoul-cz/skills layers` lists them.
+3. Local environment: [Requirements](#requirements), then `pnpm install --frozen-lockfile` and `pnpm dev` ([Commands](#commands)).
+4. Access, asked from the project lead or devops: the Freelo project (`CONTEXT.md` › Freelo), the Jenkins job (its `Jenkins` check runs on every pull request) and the project's vault in 1Password (secrets and staging logins live there, never in Git). Then read `AGENTS.md` and `CONTEXT.md`.
+
 ## Requirements
 
 - Node.js 26 (`.nvmrc`) and the pnpm version pinned in `package.json` (`packageManager`; Node 26 ships without corepack:
