@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "package_version": "v0.5.1",
+    "package_version": "v0.5.2",
     "layers": [
         "general",
         "framework/astro"
@@ -41,10 +41,10 @@
         },
         "docs/project_guidelines/deployment.md": {
             "block": "deployment",
-            "sha256": "ee7dde8e9c0f3ff4d99e4023edb85c8ea21b2e458e3801104bde1e0164ea88e8",
+            "sha256": "d289f095f785fbfb6ea767d6afbd068c52d4f6010115e70bf68389ac24f5f6e3",
             "sources": {
-                "general/deployment.md": "462653a665c217df1d126a36a40251a7b4393877bdf1971ebf60616f304e646a",
-                "framework/astro/deployment.md": "e699525a09498ef91263ca5f8a89752ddafff6f856bc44bb86f4dbc9d46b64af"
+                "general/deployment.md": "b1176f9e6c3d4f7fb4c464c87d8c84aa4a6f690b25ffc21093803ae2e5bd55e5",
+                "framework/astro/deployment.md": "975cce0b24eb1712dc66d54af2a60c7fa3dc593515f5fe2af8f31e971c521ef0"
             }
         },
         "docs/project_guidelines/documentation.md": {
@@ -110,9 +110,9 @@
         },
         "docs/project_guidelines/workflow.md": {
             "block": "workflow",
-            "sha256": "fb6c2c9551cdf3b36ff2ec10547ede0acdc1eba0ece1ac72a4bc03e08990523f",
+            "sha256": "47de032ca4061d845b07ee65fbcbd9575dd155e7165a9228b86d2786b8df96ba",
             "sources": {
-                "general/workflow.md": "392468aaa4c8a8e0a37036ddef781e8e90e65db11e267d65c7eabd50b7942d45"
+                "general/workflow.md": "517c3f7e9828f2c22db797f003675ea1c3d9201cd20f2a48d1a2aa8044575554"
             }
         }
     }
