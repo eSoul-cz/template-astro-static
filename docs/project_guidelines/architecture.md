@@ -85,9 +85,9 @@ Forms and interactive features (login, cart, account) call the backend's API on 
 ### Archetype `B-admin`
 
 - Server code lives in `src/server/` as plain Node TypeScript with no `astro:*` imports, so scripts (migrations, seeds) run it directly. One runtime serves actions, pages, API routes and middleware.
-- Migrations are numbered files registered in one place; the start fails when a registered migration below the latest applied one never ran. A migration from a parallel branch takes an id above everything merged.
-- Seeds run once per database, in id order, in a transaction with their marker, and never again, even when the client later edits the data. Changed seeded copy gets its own seed that replaces the old value only where it is still unedited.
-- Settings from the environment are validated when migrations run and at startup, so an invalid value fails the deploy instead of a request.
+- Migrations are numbered files registered in one place; the migration run fails when a registered migration below the latest applied one never ran. A migration from a parallel branch takes an id above everything merged.
+- Seeds run once per database, in id order, in a transaction with their marker, and never again, even when the client later edits the data. Changed seeded copy gets its own seed that replaces the old value only where it is still unedited. A developer starts them by hand (`pnpm seed` locally, `node src/server/seed.ts` in the deployed container); the start entrypoint never runs them ([deployment.md](deployment.md#the-production-start-entrypoint)).
+- Settings from the environment are validated when migrations and seeds run and at startup, so an invalid value fails the deploy instead of a request.
 - The middleware sets security headers (CSP, `nosniff`, `Referrer-Policy`), limits request body sizes, and marks admin and action responses `Cache-Control: private, no-store`.
 - Uploads are validated by decoding their content, stored outside the build, and served only as resized copies; originals (with EXIF and GPS) are served to logged-in administrators only.
 

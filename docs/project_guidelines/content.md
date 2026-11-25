@@ -35,7 +35,7 @@ The archetype decides who edits content and how it reaches the site ([architectu
 
 - Every editable section is declared once in a **registry** of sections and fields (in web order, with layout, required flag and maximum length). The admin form, the stored keys and the page rendering all come from it; a field that is not in the registry is not editable.
 - Text is stored per section and key; images are stored as references to uploaded images, never as URLs typed by hand.
-- The approved copy and photos enter the database through a **run-once seed**, never by typing them into the admin. Later corrections to seeded copy use a new seed that replaces a value only while it is unedited.
+- The approved copy and photos enter the database through a **run-once seed**, started by hand (`pnpm seed`, or `node src/server/seed.ts` in the deployed container), never by typing them into the admin and never by the start entrypoint. Later corrections to seeded copy use a new seed that replaces a value only while it is unedited.
 - Structured data the client manages (price lists, galleries, references) has its own tables with an explicit `position` for ordering and ids that are never reused.
 - Admin copy (labels of the admin itself) lives in one labels module, not in the database.
 - The admin is designed like the public site, and its screens follow the admin frames of the design.

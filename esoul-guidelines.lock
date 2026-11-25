@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "package_version": "v0.5.2",
+    "package_version": "v0.5.3",
     "layers": [
         "general",
         "framework/astro"
@@ -13,9 +13,9 @@
         },
         "docs/project_guidelines/architecture.md": {
             "block": "architecture",
-            "sha256": "d92abecb3b345c3cbcc7313070be9c822c73a9de1df057cecd47a0891fbe4273",
+            "sha256": "8922b633e4ad680856c7f9bb1d03422dbe6fbd50eee5831003d3d91e8826db17",
             "sources": {
-                "framework/astro/architecture.md": "687c37705921e4877964e0dbbb24941ba901272f5cefd6156e0b36b88c02a997"
+                "framework/astro/architecture.md": "f6cfa6b066e9105f1ecdc4c2ced0dd9504bab1bcae617f117fb224f7384e78a0"
             }
         },
         "docs/project_guidelines/code-review.md": {
@@ -27,9 +27,9 @@
         },
         "docs/project_guidelines/content.md": {
             "block": "content",
-            "sha256": "33fddbcd972f571877617d6019fcf7b01b2126282d86d1fb810463943bacdead",
+            "sha256": "ca4edb6a89c6b5655b581be1843a7053d3cfca011defbf18720c3169c57a6475",
             "sources": {
-                "framework/astro/content.md": "466055f82015997b8a14cddef6d5a34b85999c4d55382bf69fb63189541355a9"
+                "framework/astro/content.md": "bb69d14eed1b2cb98bfbceb110990a37d5cfbee5115f3e4fec85e6219db91cb4"
             }
         },
         "docs/project_guidelines/dependencies.md": {
@@ -41,10 +41,10 @@
         },
         "docs/project_guidelines/deployment.md": {
             "block": "deployment",
-            "sha256": "d289f095f785fbfb6ea767d6afbd068c52d4f6010115e70bf68389ac24f5f6e3",
+            "sha256": "c5997e9f090710bff95ecbe9839d8554b26bda01642c2628cd3086f73777539b",
             "sources": {
-                "general/deployment.md": "b1176f9e6c3d4f7fb4c464c87d8c84aa4a6f690b25ffc21093803ae2e5bd55e5",
-                "framework/astro/deployment.md": "975cce0b24eb1712dc66d54af2a60c7fa3dc593515f5fe2af8f31e971c521ef0"
+                "general/deployment.md": "e31264a8b5f5e4e0e0fd014d155879e1b6403cd90ff3881c17847d6289a52ad2",
+                "framework/astro/deployment.md": "d791043cbc4bfe3c28ad3a9ae8ec676f2322f3e9ee60496227ffada98671b76d"
             }
         },
         "docs/project_guidelines/documentation.md": {
@@ -70,7 +70,7 @@
         },
         "docs/project_guidelines/index.md": {
             "block": "index",
-            "sha256": "c8aa272de9cc206e063cdc9f09b905cc38ae3951ca4b11eeca85f0cb5724479c"
+            "sha256": "44d2eea2b73acd674092dc428e56aa37d2d61fffa22f9edb23adeaa8b1350b99"
         },
         "docs/project_guidelines/public-website.md": {
             "block": "public-website",
@@ -110,9 +110,9 @@
         },
         "docs/project_guidelines/workflow.md": {
             "block": "workflow",
-            "sha256": "47de032ca4061d845b07ee65fbcbd9575dd155e7165a9228b86d2786b8df96ba",
+            "sha256": "d7514ba8df2c01f5265aa167f07a9806e9927725d1856115a03e2fca9352c36b",
             "sources": {
-                "general/workflow.md": "517c3f7e9828f2c22db797f003675ea1c3d9201cd20f2a48d1a2aa8044575554"
+                "general/workflow.md": "5cc2d251d9b23f8535c80079ee005286b480e3cf66ac6724b4b29e0005af32f9"
             }
         }
     }
