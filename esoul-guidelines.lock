@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "package_version": "v0.5.4",
+    "package_version": "v0.5.5",
     "layers": [
         "general",
         "framework/astro"
@@ -41,9 +41,9 @@
         },
         "docs/project_guidelines/deployment.md": {
             "block": "deployment",
-            "sha256": "c5997e9f090710bff95ecbe9839d8554b26bda01642c2628cd3086f73777539b",
+            "sha256": "342f7e434112b03f3150fbe694253feaafb29289e47e345db339eba500fcdcc9",
             "sources": {
-                "general/deployment.md": "e31264a8b5f5e4e0e0fd014d155879e1b6403cd90ff3881c17847d6289a52ad2",
+                "general/deployment.md": "6a0cc72512f2e7e0796582d15b7d1c91c43cf39ce52a93e8107c857ae49e5635",
                 "framework/astro/deployment.md": "d791043cbc4bfe3c28ad3a9ae8ec676f2322f3e9ee60496227ffada98671b76d"
             }
         },
