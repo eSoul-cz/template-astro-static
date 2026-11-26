@@ -108,7 +108,7 @@ The servers run a few shared services, each applied from the infrastructure repo
 - nginx sets the other response headers on every response, static files included: `X-Frame-Options` (or `frame-ancestors` in a header CSP), `X-Content-Type-Options: nosniff`, `Referrer-Policy` and HSTS. In nginx, a `location` with its own `add_header` repeats the shared header snippet, because nginx drops inherited headers. HTML is served `no-cache`; hashed assets (`/_astro/*` and the media path) get a long, immutable cache.
 - On `D-static-api`, a runtime API call from the browser needs the backend paths in `connect-src` of `security.csp`.
 - On `C-headless`, NGINX serves the media under `/_cms/` from the backend's bind-mounted public directory on the same host (under the backend's run directory). The site makes no runtime call to the backend, but its media depend on that directory being readable by NGINX.
-- Redirects from an old site live in this NGINX site, handed over in the pull request's deploy notes ([public-website.md](public-website.md#redirects-from-an-old-site)).
+- Redirects from an old site live in this NGINX site, handed over in the pull request's deploy notes ([public-website.md](public-website.md#redirects-from-an-old-site)). A `B-admin` site MAY keep them in the application instead, managed in its admin ([architecture.md](architecture.md#server-code)).
 
 ## Health endpoint
 

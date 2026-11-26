@@ -90,6 +90,7 @@ Forms and interactive features (login, cart, account) call the backend's API on 
 - Settings from the environment are validated when migrations and seeds run and at startup, so an invalid value fails the deploy instead of a request.
 - The middleware sets security headers (CSP, `nosniff`, `Referrer-Policy`), limits request body sizes, and marks admin and action responses `Cache-Control: private, no-store`.
 - Uploads are validated by decoding their content, stored outside the build, and served only as resized copies; originals (with EXIF and GPS) are served to logged-in administrators only.
+- Redirects kept in the application ([public-website.md](public-website.md#redirects-from-an-old-site)) are one table (old path, target or 410, hit count) that the middleware looks up before routing, from a cache the admin invalidates on save. Only a request that would otherwise end in 404 is redirected, so a redirect never hides a live page. Saving a redirect normalises both paths to the site's canonical form and refuses a target that is itself a redirected path, a path that redirects to itself, and an external URL; renaming a slug adds the old path and points earlier redirects to the new target.
 
 ### Archetypes `A-static` and `C-headless`
 
