@@ -97,3 +97,9 @@ Values are build arguments (`.env.example` lists them); the process environment 
 and `esoul-guidelines check` (`Checks`), then `deployStaticSite` uploads `dist/` to `releases/<id>/` under `deployPath`, shares the hashed `_astro` files between releases and
 switches `current` atomically; the live site is checked for the release marker and cache headers and switched back on a mismatch. NGINX serves
 `current` and `shared/_astro/` (`root <deployPath>/current;` and `location ^~ /_astro/ { root <deployPath>/shared; }`).
+
+## Addons
+
+The addons this project took are listed in `.esoul/template.json`; their documentation is linked below.
+
+<!-- @esoul-slot addons -->

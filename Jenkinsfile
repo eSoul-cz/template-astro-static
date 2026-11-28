@@ -32,4 +32,7 @@ astroPipeline(
     sharedDirs: ['_astro'],
     // Switches back and fails the build when the live site does not serve the new release marker.
     verify: [url: 'https://example-project.example.com', cacheHeaders: true],
+
+    // Addons add options of the pipeline here (a slot of the template; keep this line).
+    // @esoul-slot pipeline-options
 )
